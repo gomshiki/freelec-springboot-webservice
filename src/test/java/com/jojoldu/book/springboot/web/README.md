@@ -10,6 +10,7 @@
 * 선언할 경우 @Controller, @ControllerAdvice 등을 사용할 수 있다.
 * 단, @Service, @Component, @Repository 등은 사용할 수 없다.
 * 여기서는 컨트롤러만 사용하기 때문에 선언한다.
+* JPA 기능이 작동하지 않음
 
 ### @Autowired
 * 스프링이 관리하는 빈(Bean)을 주입받는다.
@@ -33,3 +34,6 @@
 * mvc.perform의 결과를 검증한다.
 * 응답 본문의 내용을 검증한다.
 * Controller에서 "hello"를 리턴하기 때문에 이 값이 맞는지 검증한다.
+
+### @SpringBootTest with TestRestTemplate
+* Controller와 같이 외부 연동과 관련된 부분 + JPA 기능까지 한번에 테스트할 때 사용한다.
