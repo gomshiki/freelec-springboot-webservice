@@ -42,6 +42,9 @@ dependencies {
 	 */
 	runtimeOnly 'com.h2database:h2'
 
+	// mustache 템플릿 엔진
+	implementation 'org.springframework.boot:spring-boot-starter-mustache'
+
 }
 
 tasks.named('test') {
