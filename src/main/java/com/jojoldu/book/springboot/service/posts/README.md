@@ -15,3 +15,15 @@
 * 이 상태에서 해당 데이터의 값을 변경하면 트랜잭션이 끝나는 시점에 해당 테이블에 변경분을 반영
 * 즉, Entity 객체의 값만 변경하면 별도로 Update 쿼리를 날릴 필요가 없음
 * 이 개념을 더티 체킹(Dirty checking)이라고 함
+
+-------------------
+
+```java
+  @Transactional(readOnly = true)
+    public List<PostsListResponseDto> findAllDesc(){
+        return postsRepository.findAllDesc().stream().map(PostsListResponseDto::new).collect(Collectors.toList());
+    }
+```
+### @Transactional(readOnly = true)
+* 트랜잭션 범위는 유지하되, 조회 기능만 남겨두어 조회 속도가 개선되기 때문에 
+  * 등록, 수정, 삭제 기능이 전혀 없는 메서드에 사용을 권장
